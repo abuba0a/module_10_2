@@ -1,4 +1,3 @@
-# -*- coding: utf8 -*-
 from threading import Thread
 from time import sleep
 
@@ -13,13 +12,13 @@ class Knight(Thread):
         self.power = power
 
     def run(self):
-        print(f'{self.name}, íà íàñ íàïàëè!')
+        print(f'{self.name}, на нас напали!')
         while self.enemy > 0:
             self.enemy -= self.power
             self.days += 1
             sleep(1.0)
-            print(f'{self.name} ñðàæàåòñÿ {self.days} äíåé(äíÿ), îñòàëîñü {self.enemy} âîèíîâ. \n')
-        print(f'{self.name} îäåðæàë ïîáåäó ñïóñòÿ {self.days} äíåé(äíÿ)!')
+            print(f'{self.name} сражается {self.days} дней(дня), осталось {self.enemy} воинов. \n')
+        print(f'{self.name} одержал победу спустя {self.days} дней(дня)!')
 
 
 first_knight = Knight('Sir Lancelot', 10)
@@ -30,3 +29,4 @@ second_knight.start()
 
 first_knight.join()
 second_knight.join()
+
