@@ -17,7 +17,8 @@ class Knight(Thread):
             self.enemy -= self.power
             self.days += 1
             sleep(1.0)
-            print(f'{self.name} сражается {self.days} дней(дня), осталось {self.enemy} воинов. \n')
+            if self.enemy >= 0:
+                print(f'{self.name} сражается {self.days} дней(дня), осталось {self.enemy} воинов. \n')
         print(f'{self.name} одержал победу спустя {self.days} дней(дня)!')
 
 
